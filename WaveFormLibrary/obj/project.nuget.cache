@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "3uL8UkL0Twa7fpcQaMbL/0hU8PZoMB8KjS0tT82+gRXaAJG6JH/LWMGhanObaf/yEo6z8az5KzI8LrNqby49WQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mariu\\source\\repos\\WaveForm\\WaveFormLibrary\\WaveFormLibrary.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mariu\\.nuget\\packages\\fparsec\\1.1.1\\fparsec.1.1.1.nupkg.sha512",
+    "C:\\Users\\mariu\\.nuget\\packages\\fsharp.control.asyncseq\\3.2.1\\fsharp.control.asyncseq.3.2.1.nupkg.sha512",
+    "C:\\Users\\mariu\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
+    "C:\\Users\\mariu\\.nuget\\packages\\fsharpx.async\\1.14.1\\fsharpx.async.1.14.1.nupkg.sha512",
+    "C:\\Users\\mariu\\.nuget\\packages\\fsharpx.collections\\3.0.1\\fsharpx.collections.3.0.1.nupkg.sha512",
+    "C:\\Users\\mariu\\.nuget\\packages\\fsharpx.extras\\3.0.0\\fsharpx.extras.3.0.0.nupkg.sha512",
+    "C:\\Users\\mariu\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
+    "C:\\Users\\mariu\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

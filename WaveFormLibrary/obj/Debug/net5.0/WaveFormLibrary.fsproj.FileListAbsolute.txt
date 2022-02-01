@@ -1,0 +1,8 @@
+C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\bin\Debug\net5.0\WaveFormLibrary.deps.json
+C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\bin\Debug\net5.0\WaveFormLibrary.dll
+C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\bin\Debug\net5.0\WaveFormLibrary.pdb
+C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\obj\Debug\net5.0\WaveFormLibrary.fsproj.AssemblyReference.cache
+C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\obj\Debug\net5.0\WaveFormLibrary.AssemblyInfoInputs.cache
+C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\obj\Debug\net5.0\WaveFormLibrary.AssemblyInfo.fs
+C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\obj\Debug\net5.0\WaveFormLibrary.dll
+C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\obj\Debug\net5.0\WaveFormLibrary.pdb

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Parsing.fs" />
+    <Compile Include="SignalGenerator.fs" />
+    <Compile Include="WavePacker.fs" />
+    <Compile Include="Assembler.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FParsec" Version="1.1.1" />
+    <PackageReference Include="FSharp.Control.AsyncSeq" Version="3.2.1" />
+    <PackageReference Include="FSharpx.Async" Version="1.14.1" />
+    <PackageReference Include="FSharpx.Collections" Version="3.0.1" />
+    <PackageReference Include="FSharpx.Extras" Version="3.0.0" />
+    <PackageReference Include="FSharp.Core" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>

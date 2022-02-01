@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "WaveFormLibrary", "WaveFormLibrary\WaveFormLibrary.fsproj", "{0B2C6BB3-416B-448E-BDF3-810A3B6D6A23}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WaveFormWeb", "WaveFormWeb\WaveFormWeb.fsproj", "{E9C238B0-98E3-45BD-BCD4-E7AC81E2D639}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B2C6BB3-416B-448E-BDF3-810A3B6D6A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B2C6BB3-416B-448E-BDF3-810A3B6D6A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B2C6BB3-416B-448E-BDF3-810A3B6D6A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B2C6BB3-416B-448E-BDF3-810A3B6D6A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9C238B0-98E3-45BD-BCD4-E7AC81E2D639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9C238B0-98E3-45BD-BCD4-E7AC81E2D639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9C238B0-98E3-45BD-BCD4-E7AC81E2D639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9C238B0-98E3-45BD-BCD4-E7AC81E2D639}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26C35E0C-B19A-4EA4-B26A-142C2C29D00D}
+	EndGlobalSection
+EndGlobal
