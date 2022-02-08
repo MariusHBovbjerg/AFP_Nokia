@@ -1,8 +1,0 @@
-C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\bin\Debug\netstandard2.0\WaveFormLibrary.deps.json
-C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\bin\Debug\netstandard2.0\WaveFormLibrary.dll
-C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\bin\Debug\netstandard2.0\WaveFormLibrary.pdb
-C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\obj\Debug\netstandard2.0\WaveFormLibrary.fsprojAssemblyReference.cache
-C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\obj\Debug\netstandard2.0\WaveFormLibrary.AssemblyInfoInputs.cache
-C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\obj\Debug\netstandard2.0\WaveFormLibrary.AssemblyInfo.fs
-C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\obj\Debug\netstandard2.0\WaveFormLibrary.dll
-C:\Users\mariu\source\repos\WaveForm\WaveFormLibrary\obj\Debug\netstandard2.0\WaveFormLibrary.pdb

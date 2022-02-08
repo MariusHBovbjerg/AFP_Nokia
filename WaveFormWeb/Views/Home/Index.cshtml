@@ -1,12 +1,33 @@
-﻿
-<form method="post" action="/home/produce">
-    <div class="1Col">
-        <textarea class="score" name="score" spellcheck="false">8e2 8#d2 8e2 8#d2 8e2 8b1 8d2 8c2 4a1 8- 8c1 8e1 8a1 4b1 8- 8e1 8#g1 8b1 4c2 8- 8e1 8e2 8#d2 8e2 8#d2 8e2 8b1 8d2 8c2 4a1 8- 8c1 8e1 8a1 4b1 8- 8e1 8c2 8b1 4a1</textarea>
-    </div>
+﻿<iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+<div>
+    <h1>Nokia Ringtone Composer</h1>
+</div>
 
-    <div class="rCol">
-        <h1>Nokia Ringtone Composer</h1>
-            <input type="submit" value="Amaze me" />
-        <p><br />Get some <a href="http://nokia.nigelcoldwell.co.uk/tunes.html" target="_blank">sample tunes</a>.</p>
+<form method="post" action="/file/produce" target="dummyframe" onsubmit="updateFile()">
+    <div>
+        <textarea class="score"
+                  name="score"
+                  spellcheck="false">
+        8e2 8#d2 8e2 8#d2 8e2 8b1 8d2 8c2 4a1 8- 8c1 8e1 8a1 4b1 8- 8e1 8#g1 8b1 4c2 8- 8e1 8e2 8#d2 8e2 8#d2 8e2 8b1 8d2 8c2 4a1 8- 8c1 8e1 8a1 4b1 8- 8e1 8c2 8b1 4a1
+        </textarea>
+    </div>
+    <div>
+        <input type="submit" value="Submit"/>
     </div>
 </form>
+<div>
+    <audio controls id="waveFile">
+        <source src="sound.wav"
+                type="audio/wav" />
+        Your browser does not support the audio element.
+    </audio>
+</div>
+<p><br />Get some <a href="http://nokia.nigelcoldwell.co.uk/tunes.html" target="_blank">sample tunes</a>.</p>
+
+<script>
+    function updateFile() {
+        setTimeout(function () {
+            document.getElementById("waveFile").load();
+        }, 2000);
+    }
+</script>

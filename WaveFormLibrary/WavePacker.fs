@@ -3,7 +3,7 @@
     open System.IO
     open System.Text
 
-    let pack (d:int16[]) = 
+    let pack (d:int16[]) =
         let stream = new MemoryStream();
         let writer = new BinaryWriter(stream, Encoding.ASCII);
         let dataLength = Array.length d * 2
@@ -31,10 +31,6 @@
         writer.Write(data)
         stream
 
-    let writeSingle fileName (stream:MemoryStream) =
-        use fs = new FileStream(Path.Combine(__SOURCE_DIRECTORY__,fileName + ".wav"), FileMode.Create)
+    let write fileName (stream:MemoryStream) =
+        use fs = new FileStream(Path.Combine("../WaveFormWeb/wwwroot",fileName + ".wav"), FileMode.Create)
         fs |> stream.WriteTo
-        
-    let write fileName (streams:MemoryStream list) =
-        use fs = new FileStream(Path.Combine(__SOURCE_DIRECTORY__,fileName + ".wav"), FileMode.Create)
-        streams |> List.iter (fun stream -> fs |> stream.WriteTo)

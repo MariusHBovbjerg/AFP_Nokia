@@ -14,6 +14,7 @@ type Startup private () =
     // This method gets called by the runtime. Use this method to add services to the container.
     member this.ConfigureServices(services: IServiceCollection) =
         // Add framework services.
+        services.AddControllers() |> ignore
         services.AddControllersWithViews().AddRazorRuntimeCompilation() |> ignore
         services.AddRazorPages() |> ignore
 
@@ -32,6 +33,7 @@ type Startup private () =
         app.UseAuthorization() |> ignore
 
         app.UseEndpoints(fun endpoints ->
+            endpoints.MapControllers() |> ignore
             endpoints.MapControllerRoute(
                 name = "default",
                 pattern = "{controller=Home}/{action=Index}/{id?}") |> ignore

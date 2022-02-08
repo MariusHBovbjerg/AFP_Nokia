@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Include="Models/ErrorViewModel.fs" />
+    <Compile Include="Controllers/FileController.fs" />
     <Compile Include="Controllers/HomeController.fs" />
     <Compile Include="Startup.fs" />
     <Compile Include="Program.fs" />
