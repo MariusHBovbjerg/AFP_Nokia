@@ -11,5 +11,5 @@ type FileController (logger : ILogger<FileController>) =
     [<HttpPost("produce")>]
     member this.Produce([<FromForm>]score:string) =
         match Assembler.assembleToPackedStream score with
-            | Choice1Of2 ms -> WavePacker.write "sound" ms
-            | Choice2Of2 err -> failwith err
+            | Choice2Of2 ms -> WavePacker.write "sound" ms
+            | Choice1Of2 err -> failwith err
