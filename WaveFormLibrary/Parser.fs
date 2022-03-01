@@ -2,11 +2,11 @@
 
 open FParsec
 
+type Duration = Half | Quarter | Eighth | Sixteenth | Thirtysecond
+type Length = { duration: Duration; extendedDuration: bool }
 type Note = A | ASharp | B | C | CSharp | D | DSharp | E | F | FSharp | G | GSharp
 type Octave = One | Two | Three
 type Pitch = Rest | Tone of note: Note * octave: Octave
-type Duration = Half | Quarter | Eighth | Sixteenth | Thirtysecond
-type Length = { duration: Duration; extendedDuration: bool }
 type Token = { length: Length; pitch: Pitch }
 
 let octaveToInt octave =
@@ -26,29 +26,25 @@ let getNoteLength = pipe2
 
 let isSharp = (stringReturn "#" true) <|> (stringReturn "" false)
 
-let sharpNote = pipe2 
+let setSharp = pipe2 
                     isSharp
-                    (anyOf "acdfg") 
+                    (anyOf "abcdefg") 
                     (fun isSharp note -> 
                         match (isSharp, note) with
                         | (false, 'a') -> A
-                        | (true, 'a') -> ASharp                    
+                        | (true, 'a') -> ASharp    
+                        | (false, 'b') -> B
                         | (false, 'c') -> C
                         | (true, 'c') -> CSharp
                         | (false, 'd') -> D
                         | (true, 'd') -> DSharp
+                        | (false, 'e') -> E
                         | (false, 'f') -> F
                         | (true, 'f') -> FSharp
                         | (false, 'g') -> G
                         | (true, 'g') -> GSharp
                         | (_,unknown) -> sprintf "Unknown note %c" unknown |> failwith)
 
-let notSharp = anyOf "be" |>> (function 
-                        | 'b' -> B
-                        | 'e' -> E
-                        | unknown -> sprintf "Unknown note %c" unknown |> failwith)
-
-let setSharp = notSharp <|> sharpNote
 
 let evaluateOctave = anyOf "123" |>> (function
                 | '1' -> One
@@ -58,13 +54,13 @@ let evaluateOctave = anyOf "123" |>> (function
 
 let evaluateTone = pipe2 setSharp evaluateOctave (fun n o -> Tone(note = n, octave = o))
 let evaluateRest = stringReturn "-" Rest
-let makeToken = pipe2 getNoteLength (evaluateRest <|> evaluateTone) (fun l t -> {length = l; pitch = t})
+let makeToken = pipe2 getNoteLength (evaluateRest <|> evaluateTone) (fun l p -> {length = l; pitch = p})
 
 let pScore: Parser<Token list, Unit> = sepBy makeToken (pstring " ")
 
 // Added ToLower() and Trim() to clean the input and guarantee that you can't mistype with uppercase by mistake
 let parseScore (score: string): Choice<string, Token list> =
-    match run pScore score with
+    match score.ToLower().Trim() |> run pScore with
         | Failure(errorMsg,_,_)-> Choice1Of2(errorMsg)
         | Success(result,_,_) -> Choice2Of2(result)
 
