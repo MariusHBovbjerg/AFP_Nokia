@@ -6,10 +6,10 @@ let rec compare xl yl =
     match xl, yl with 
     | [], [] -> false
     | x::xs, y::ys -> true
-    | _ -> failwith("First Assert Failed")
+    | _ -> false
     
 let assertScore createdScore expectedScore = 
     if(compare createdScore expectedScore) then
         ()
     else
-        failwith("First Assert Failed")
+        failwith("The result is not as expected.")
