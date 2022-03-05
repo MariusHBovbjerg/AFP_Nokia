@@ -2,12 +2,17 @@
 
 open FParsec
 
-type Duration = Half | Quarter | Eighth | Sixteenth | Thirtysecond
+type Duration = Full | Half | Quarter | Eighth | Sixteenth | Thirtysecond
 type Length = { duration: Duration; extendedDuration: bool }
 type Note = A | ASharp | B | C | CSharp | D | DSharp | E | F | FSharp | G | GSharp
 type Octave = One | Two | Three
 type Pitch = Rest | Tone of note: Note * octave: Octave
 type Token = { length: Length; pitch: Pitch }
+
+let bpm = 120.
+let secPerBeat = 60./bpm
+
+let notes = [A;ASharp;B;C;CSharp;D;DSharp;E;F;FSharp;G;GSharp]
 
 let octaveToInt octave =
     match octave with
@@ -17,12 +22,9 @@ let octaveToInt octave =
 
 let pExtendedParser : Parser<bool,Unit> = (stringReturn "." true) <|> (stringReturn "" false)
 
-let measureDuration = (stringReturn "2" Half) <|> (stringReturn "4" Quarter) <|> (stringReturn "8" Eighth) <|> (stringReturn "16" Sixteenth) <|> (stringReturn "32" Thirtysecond)
+let measureDuration = (stringReturn "2" Half) <|> (stringReturn "4" Quarter) <|> (stringReturn "8" Eighth) <|> (stringReturn "16" Sixteenth) <|> (stringReturn "32" Thirtysecond) <|> (stringReturn "1" Full)
 
-let getNoteLength = pipe2 
-                      measureDuration            
-                      pExtendedParser 
-                      (fun t e -> {duration = t; extendedDuration = e})
+let getNoteLength = pipe2 measureDuration pExtendedParser (fun t e -> {duration = t; extendedDuration = e})
 
 let isSharp = (stringReturn "#" true) <|> (stringReturn "" false)
 
@@ -45,7 +47,6 @@ let setSharp = pipe2
                         | (true, 'g') -> GSharp
                         | (_,unknown) -> sprintf "Unknown note %c" unknown |> failwith)
 
-
 let evaluateOctave = anyOf "123" |>> (function
                 | '1' -> One
                 | '2' -> Two
@@ -53,7 +54,9 @@ let evaluateOctave = anyOf "123" |>> (function
                 | unknown -> sprintf "Unknown octave %c" unknown |> failwith)
 
 let evaluateTone = pipe2 setSharp evaluateOctave (fun n o -> Tone(note = n, octave = o))
+
 let evaluateRest = stringReturn "-" Rest
+
 let makeToken = pipe2 getNoteLength (evaluateRest <|> evaluateTone) (fun l p -> {length = l; pitch = p})
 
 let pScore: Parser<Token list, Unit> = sepBy makeToken (pstring " ")
@@ -64,19 +67,15 @@ let parseScore (score: string): Choice<string, Token list> =
         | Failure(errorMsg,_,_)-> Choice1Of2(errorMsg)
         | Success(result,_,_) -> Choice2Of2(result)
 
-let bpm = 120.
-let secPerBeat = 60./bpm
-
 let durationFromToken (token: Token): float =
     (match token.length.duration with
+        | Full -> 4.*1000.*secPerBeat
         | Half -> 2.*1000.*secPerBeat
         | Quarter -> 1.*1000.*secPerBeat
         | Eighth -> 1./2.*1000.*secPerBeat
         | Sixteenth -> 1./4.*1000.*secPerBeat
         | Thirtysecond -> (1./8.)*1000.*secPerBeat) 
         * (if token.length.extendedDuration then 1.5 else 1.0)
-        
-let notes = [A;ASharp;B;C;CSharp;D;DSharp;E;F;FSharp;G;GSharp]
 
 let overAllIndex (note, octave): int = 
     let noteIdx = List.findIndex (fun n -> n=note) notes

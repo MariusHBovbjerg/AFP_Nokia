@@ -13,8 +13,11 @@
     </div>
     <div>
         <input type="submit" value="Submit"/>
+        <p>Creating the file takes about a second, there's a built-in 2 second delay before it updates the player with the new sound. If it doesn't show up in a proper time-frame, the button below will try to immediately update the sound file.</p>
     </div>
 </form>
+
+<button onClick="updateFileButton()">Update Sound</button>
 <div>
     <audio controls id="waveFile">
         <source src="sound.wav"
@@ -28,6 +31,10 @@
     function updateFile() {
         setTimeout(function () {
             document.getElementById("waveFile").load();
-        }, 2000);
+        }, 3000);
+    }
+
+    function updateFileButton() {
+        document.getElementById("waveFile").load();
     }
 </script>
