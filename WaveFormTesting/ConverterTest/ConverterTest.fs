@@ -25,7 +25,6 @@ type ``When packing an audio file `` () =
         let first4Char = System.Text.Encoding.ASCII.GetString(bucket)
         Assert.AreEqual("RIFF", first4Char)
     
-       
     [<Test>]
     member this.``the size is correct`` () =
         let formatOverhead = 44.
@@ -36,4 +35,3 @@ type ``When packing an audio file `` () =
             Assert.AreEqual((length/1000.) * 44100. * 2. + formatOverhead, file.Length)
 
         List.iter assertLegnth files
-    
