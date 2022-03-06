@@ -7,7 +7,7 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "WaveFormLibrary", "WaveForm
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "WaveFormWeb", "WaveFormWeb\WaveFormWeb.fsproj", "{E9C238B0-98E3-45BD-BCD4-E7AC81E2D639}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WaveFormTesting", "WaveFormTesting\WaveFormTesting.fsproj", "{67E68F54-3C5E-4039-9B1F-933E5B994E65}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "WaveFormTesting", "WaveFormTesting\WaveFormTesting.fsproj", "{67E68F54-3C5E-4039-9B1F-933E5B994E65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

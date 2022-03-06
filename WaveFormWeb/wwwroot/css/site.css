@@ -31,6 +31,33 @@ textarea {
     padding-right: 15px;
 }
 
+/*NAVBAR*/
+.navbar-nokia {
+    background-color: #767676 !important;
+    border-bottom: #000000 !important;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 768px) {
+    .float-left-sm {
+        float: left;
+    }
+}
+
+@media (min-width: 769px) {
+    .float-right-lg {
+        float: right;
+    }
+}
+
+
+
+/*INLINE ELEMENTS*/
+.inline-block-child {
+    display: inline-block;
+    float: left;
+}
+
 .field-validation-error {
     color: #b94a48;
 }
